@@ -19,11 +19,4 @@ sudo add-apt-repository \
     stable"
 
 sudo apt-get -y update
-sudo apt-get -y install docker-ce
-
-sudo docker run -d -p 3306:3306 \
-      -e MYSQL_ROOT_PASSWORD=root \
-      -e MYSQL_USER=mysql \
-      -e MYSQL_PASSWORD=mysql \
-      -e MYSQL_DATABASE=falcon-dev \
-      mysql:5.6
+sudo apt-get -y install docker-ce docker-compose

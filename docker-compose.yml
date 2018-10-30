@@ -22,3 +22,5 @@ services:
       POSTGRES_PASSWORD: metabase
       POSTGRES_USER: metabase
       POSTGRES_DB: metabase
+  cli:
+    build: .
