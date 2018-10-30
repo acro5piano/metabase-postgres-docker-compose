@@ -11,8 +11,8 @@ sudo docker-compose up -d --build
 
 ```
 sudo docker-comopse exec cli heroku login
-sudo docker-comopse exec cli heroku db heroku pg:backups:capture -a myapp
-sudo docker-comopse exec cli heroku heroku pg:backups:download -a myapp
+sudo docker-comopse exec cli heroku pg:backups:capture -a myapp
+sudo docker-comopse exec cli heroku pg:backups:download -a myapp
 sudo docker cp heroku heroku pg:backups:download -a myapp
 ```
 

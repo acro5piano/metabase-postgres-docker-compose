@@ -7,17 +7,10 @@ services:
       - "3000:3000"
     depends_on:
       - db
-    # environment:
-      # MB_DB_TYPE: postgres
-      # MB_DB_DBNAME: metabase
-      # MB_DB_PORT: 5432
-      # MB_DB_USER: metabase
-      # MB_DB_PASS: metabase
-      # MB_DB_HOST: db
   db:
     image: postgres:10-alpine
     volumes:
-      - "./:/host"
+      - "data/:/host"
     ports:
       - "5432:5432"
     environment:
@@ -26,3 +19,14 @@ services:
       POSTGRES_DB: metabase
   cli:
     build: .
+    volumes:
+      - "data/:/host"
+
+# TODO: postgres と共存したい
+# environment:
+  # MB_DB_TYPE: postgres
+  # MB_DB_DBNAME: metabase
+  # MB_DB_PORT: 5432
+  # MB_DB_USER: metabase
+  # MB_DB_PASS: metabase
+  # MB_DB_HOST: db
