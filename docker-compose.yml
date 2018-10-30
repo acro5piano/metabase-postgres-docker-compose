@@ -7,13 +7,13 @@ services:
       - "3000:3000"
     depends_on:
       - db
-    environment:
-      MB_DB_TYPE: postgres
-      MB_DB_DBNAME: metabase
-      MB_DB_PORT: 5432
-      MB_DB_USER: metabase
-      MB_DB_PASS: metabase
-      MB_DB_HOST: db
+    # environment:
+      # MB_DB_TYPE: postgres
+      # MB_DB_DBNAME: metabase
+      # MB_DB_PORT: 5432
+      # MB_DB_USER: metabase
+      # MB_DB_PASS: metabase
+      # MB_DB_HOST: db
   db:
     image: postgres:10-alpine
     ports:
@@ -23,4 +23,4 @@ services:
       POSTGRES_USER: metabase
       POSTGRES_DB: metabase
   cli:
-    image: acro5piano/heroku-cli
+    build: .
