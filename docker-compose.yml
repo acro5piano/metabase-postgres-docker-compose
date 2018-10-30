@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  app:
+    image: metabase/metabase
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: metabase
+      MB_DB_PORT: 5432
+      MB_DB_USER: metabase
+      MB_DB_PASS: metabase
+      MB_DB_HOST: db
+  db:
+    image: postgres:10-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: metabase
+      POSTGRES_USER: metabase
+      POSTGRES_DB: metabase
