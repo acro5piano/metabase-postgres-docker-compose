@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo docker-compose exec cli heroku pg:backups:capture -a myapp
-sudo docker-compose exec cli heroku pg:backups:download -a myapp
+sudo docker-compose exec cli heroku pg:backups:capture -a $APP
+sudo docker-compose exec cli heroku pg:backups:download -a $APP
 sudo docker-compose exec cli cp latest.dump /host
 
 sudo docker-compose exec appdata \

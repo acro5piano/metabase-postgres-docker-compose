@@ -21,3 +21,10 @@ sudo docker-compose exec appdata \
     pg_restore --verbose --clean --no-acl --no-owner \
     -h localhost -U metabase -d metabase --create /host/latest.dump
 ```
+
+add cron:
+
+```
+APP=myapp /home/ubuntu/metabase-postgres-docker-compose/cron.sh
+```
+
