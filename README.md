@@ -20,8 +20,7 @@ sudo docker-compose up -d --build
 ## import data
 
 ```
-export APP=myapp
-sudo ./cron.sh
+sudo APP=myapp ./cron.sh
 ```
 
 
